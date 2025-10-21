@@ -26,13 +26,6 @@ public class MainActivity extends AppCompatActivity {
         return Roul_Num[RandIndex];
     };
 
-    public void spinWheel(ImageView roulette_wheel){
-        //number of spins on the wheel
-        int spinDegrees = 360 * 3 + new Random().nextInt();
-        animator.setDuration(2000);
-        animator.setInterpolator(next.Int)
-    }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

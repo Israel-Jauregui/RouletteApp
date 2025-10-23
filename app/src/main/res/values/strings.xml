@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Roulette</string>
+    <string name="action_spin">Spin</string>
+    <string name="money">Money</string>
+    <string name="bet_black">Black</string>
+    <string name="bet_red">Red</string>
+    <string name="bet_evens">Evens</string>
+    <string name="bet_odds">Odds</string>
+    <string name="victory">Congratulations!</string>
+    <string name="fail">Good Try</string>
+    <string name="no_money">Insufficient Funds</string>
 </resources>

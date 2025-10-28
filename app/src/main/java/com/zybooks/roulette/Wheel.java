@@ -6,8 +6,8 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
 
 public class Wheel {
-    public static final int[] Roul_Num = {17, 13, 29, 11, 36, 5, 20, 14, 31, 7, 0, 22, 9, 26, 12,
-            33, 2, 19, 4, 24, 6, 28, 1, 21, 10, 34, 3, 30, 8, 18, 23, 32, 16, 27, 15, 35, 25, 36, 29
+    public static final int[] Roul_Num = {28,3,19,11,35,22,13,6,25,30,4,9,1,31,
+            23,33,7,15,17,0,8,27,10,2,26,21,32,12,29,5,14,24,16,34,18,36,20
     };
     public int Roulettewheel() {
         Random random = new Random();

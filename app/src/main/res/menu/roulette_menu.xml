@@ -1,0 +1,28 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_red_black"
+        android:title="@string/action_red_black"
+        android:icon="@drawable/ic_redsblack"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_range"
+        android:title="@string/action_range"
+        android:icon="@drawable/ic_range"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_number"
+        android:title="@string/action_number"
+        android:icon="@drawable/ic_number"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_odd_even"
+        android:title="@string/action_odd_even"
+        android:icon="@drawable/ic_oddseven"
+        app:showAsAction="ifRoom" />
+</menu>
+

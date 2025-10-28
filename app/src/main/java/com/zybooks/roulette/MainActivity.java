@@ -2,11 +2,15 @@ package com.zybooks.roulette;
 
 import android.os.Bundle;
 import android.widget.ImageView;
+import android.widget.Button;
+import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
     private RouletteWheel rouletteWheel;
+    private TextView balanceText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,8 +18,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ImageView wheelView = findViewById(R.id.rouletteTable);
+        balanceText = findViewById(R.id.balanceText);
+        Button helpButton = findViewById(R.id.helpButton);
 
-        // Attach the fling/spin behavior
+        // Keep your fling class untouched — attach it exactly as before
         rouletteWheel = new RouletteWheel(wheelView);
+
+        // Balance already shows "$" from XML; ensure it's set (defensive)
+        balanceText.setText("$");
+
+        // Help button does nothing for now (placeholder)
+        helpButton.setOnClickListener(v -> {
+            // intentionally empty
+        });
     }
 }

@@ -1,5 +1,8 @@
 package com.zybooks.roulette;
 
+import android.os.Bundle;
+import android.widget.ImageView;
+import android.widget.Button;
 import static com.zybooks.roulette.Wheel.Roul_Num;
 import static com.zybooks.roulette.Wheel.angle_per_slot;
 

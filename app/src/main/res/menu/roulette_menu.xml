@@ -10,7 +10,7 @@
     <item
         android:id="@+id/action_range"
         android:title="@string/action_range"
-        android:icon="@drawable/ic_range"
+        android:icon="@drawable/range"
         app:showAsAction="ifRoom" />
 
     <item

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:xmls="http://schemas.android.com/apk/res-auto"
+    android:interpolator="@android:anim/accelerate_decelerate_interpolator"
+    tools:ignore="ExtraText">
+<rotate
+    xmls:android="http://schemas.android.com/apk/res/android"
+    android:fromDegrees="0"
+    android:toDegrees="360"
+    android:duration="200"
+    android:repeatMode="restart"
+    android:repeatCount="-1"
+    android:pivotX="50%"
+    android:pivotY="50%">
+</rotate>
+</set>

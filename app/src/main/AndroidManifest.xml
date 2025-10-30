@@ -23,7 +23,18 @@
         <!-- Secondary activity if needed -->
         <activity
             android:name=".RouletteActivity"
-            android:exported="false"/>
-    </application>
+            android:exported="false" />
 
+        <!-- Help activity with its own intent action -->
+        <activity
+            android:name=".HelpActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.zybooks.roulette.HELP" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+    </application>
 </manifest>
+

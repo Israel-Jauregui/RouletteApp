@@ -1,5 +1,6 @@
 package com.zybooks.roulette;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.Button;
@@ -27,9 +28,10 @@ public class MainActivity extends AppCompatActivity {
         // Balance already shows "$" from XML; ensure it's set (defensive)
         balanceText.setText("$");
 
-        // Help button does nothing for now (placeholder)
+        // Help button launches the HelpActivity
         helpButton.setOnClickListener(v -> {
-            // intentionally empty
+            Intent intent = new Intent(MainActivity.this, HelpActivity.class);
+            startActivity(intent);
         });
     }
 }

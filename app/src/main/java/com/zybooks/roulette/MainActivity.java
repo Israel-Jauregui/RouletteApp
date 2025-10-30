@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
             15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36
 
     };
-
+private int userMoney =0;
     public int wheelspin() {
         Random random = new Random();
         int RandIndex = random.nextInt(Roul_Num.length);
@@ -53,12 +53,24 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Number selected", Toast.LENGTH_SHORT).show();
             return true;
         } else if (id == R.id.action_odds_even) {
-            Toast.makeText(this, "Odd / Even selected", Toast.LENGTH_SHORT).show();
+            if (userMoney <= 0) {
+                showInsufficientMoneyDialog();
+            } else {
+                Toast.makeText(this, "Odd/Even selected", Toast.LENGTH_SHORT).show();
+            }
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
-}
+    private void showInsufficientMoneyDialog() {
+        new androidx.appcompat.app.AlertDialog.Builder(MainActivity.this)
+                .setTitle("Insufficient Money")
+                .setMessage("You don’t have enough money to play Odd or Even!")
+                .setPositiveButton("OK", null)
+                .show();
+    }
+    }
+
 
 

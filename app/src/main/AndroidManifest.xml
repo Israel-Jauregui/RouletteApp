@@ -10,6 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Roulette">
 
+        <!-- HelpActivity declaration -->
+        <activity
+            android:name=".HelpActivity"
+            android:exported="false" />
+
+        <!-- Secondary activity if needed -->
+        <activity
+            android:name=".RouletteActivity"
+            android:exported="false"/>
+
         <!-- Launch MainActivity first -->
         <activity
             android:name=".MainActivity"
@@ -20,21 +30,6 @@
             </intent-filter>
         </activity>
 
-        <!-- Secondary activity if needed -->
-        <activity
-            android:name=".RouletteActivity"
-            android:exported="false" />
-
-        <!-- Help activity with its own intent action -->
-        <activity
-            android:name=".HelpActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="com.zybooks.roulette.HELP" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-
     </application>
-</manifest>
 
+</manifest>

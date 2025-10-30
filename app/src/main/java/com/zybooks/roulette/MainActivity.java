@@ -56,7 +56,7 @@ private int userMoney =0;
             if (userMoney <= 0) {
                 showInsufficientMoneyDialog();
             } else {
-                Toast.makeText(this, "Odd/Even selected", Toast.LENGTH_SHORT).show();
+                showOddEvenChoiceDialog();
             }
             return true;
         }
@@ -70,7 +70,20 @@ private int userMoney =0;
                 .setPositiveButton("OK", null)
                 .show();
     }
+    private void showOddEvenChoiceDialog() {
+        new androidx.appcompat.app.AlertDialog.Builder(MainActivity.this)
+                .setTitle("Choose your bet")
+                .setMessage("Would you like to bet on Odd or Even?")
+                .setPositiveButton("Odd", (dialog, which) -> {
+                    Toast.makeText(MainActivity.this, "You selected Odd", Toast.LENGTH_SHORT).show();
+                })
+                .setNegativeButton("Even", (dialog, which) -> {
+                    Toast.makeText(MainActivity.this, "You selected Even", Toast.LENGTH_SHORT).show();
+                })
+                .show();
     }
+}
+
 
 
 

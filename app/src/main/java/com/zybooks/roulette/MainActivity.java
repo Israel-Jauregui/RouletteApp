@@ -44,16 +44,16 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.action_red_black) {
-            Toast.makeText(this, "Red / Black clicked", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Red / Black selected", Toast.LENGTH_SHORT).show();
             return true;
         } else if (id == R.id.action_range) {
-            Toast.makeText(this, "Range clicked", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Range selected", Toast.LENGTH_SHORT).show();
             return true;
         } else if (id == R.id.action_number) {
-            Toast.makeText(this, "Number clicked", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Number selected", Toast.LENGTH_SHORT).show();
             return true;
-        } else if (id == R.id.action_odd_even) {
-            Toast.makeText(this, "Odd / Even clicked", Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.action_odds_even) {
+            Toast.makeText(this, "Odd / Even selected", Toast.LENGTH_SHORT).show();
             return true;
         }
 

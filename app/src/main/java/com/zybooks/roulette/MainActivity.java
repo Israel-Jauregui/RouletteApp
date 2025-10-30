@@ -11,8 +11,10 @@ import java.util.Random;
 import android.animation.Animator;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
+import android.graphics.Color;
+import android.view.Window;
 
-
+import androidx.core.view.WindowCompat;
 public class MainActivity extends AppCompatActivity {
 
     private static final int[] Roul_Num = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14,
@@ -31,7 +33,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         setContentView(R.layout.activity_main);
+
+
+
+
     }
     // This shows the icons
     @Override

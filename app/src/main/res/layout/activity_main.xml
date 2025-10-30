@@ -7,22 +7,9 @@
     android:layout_height="match_parent"
     android:orientation= "vertical"
     android:gravity = "center"
+    android:fitsSystemWindows="true"
     tools:context="com.zybooks.roulette.MainActivity"
     >
-
-
-    <ImageView
-
-        android:id="@+id/rouletteTable"
-        android:layout_width="355dp"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:contentDescription="test"
-        android:src="@drawable/test"
-
-
-        />
-
 
 
 

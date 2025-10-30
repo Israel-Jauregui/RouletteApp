@@ -9,4 +9,10 @@
     <string name="victory">Congratulations!</string>
     <string name="fail">Good Try</string>
     <string name="no_money">Insufficient Funds</string>
+    <string name="app_name">RouletteApp</string>
+    <string name="action_red_black">Red / Black</string>
+    <string name="action_range">Range</string>
+    <string name="action_number">Number</string>
+    <string name="action_odd_even">Odd / Even</string>
+    <string name="roulette">Roulette</string>
 </resources>

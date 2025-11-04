@@ -4,25 +4,32 @@ import android.animation.Animator;
 import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.view.View;
-import android.view.animation.DecelerateInterpolator;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Random;
 
-import static com.zybooks.roulette.Wheel.Roul_Num;
-import static com.zybooks.roulette.Wheel.angle_per_slot;
-import static com.zybooks.roulette.Wheel.findIndexOfNumber;
+
 
 public class MainActivity extends AppCompatActivity {
 
     private ImageView rouletteWheel;
     private Button spinButton;
     private TextView resultText;
+    private GestureDetector gestureDetector;
+
+    private Random random;
+
+    private int lastDegree = 0;
+    private static final int Num_Slots= 37;
+    private static final float Slot_Degrees= 360f / Num_Slots;
+
 
     private float currentRotation = 0f;
 
@@ -33,50 +40,59 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         rouletteWheel = findViewById(R.id.rouletteTable);
-        spinButton = findViewById(R.id.spinButton);
         resultText = findViewById(R.id.balanceText);
 
-        spinButton.setOnClickListener(v -> spinWheel());
-    }
+        random = new Random();
 
-    private void spinWheel() {
-        spinButton.setEnabled(false);
-
-        Random random = new Random();
-        int winningIndex = random.nextInt(Roul_Num.length);
-        int winningNumber = Roul_Num[winningIndex];
-
-        float targetAngle = 360f - (winningIndex * angle_per_slot);
-        float rotations = 360 * 5;
-        float finalRotation = currentRotation + rotations + targetAngle;
-
-        ObjectAnimator animator = ObjectAnimator.ofFloat(
-                rouletteWheel,
-                "rotation",
-                currentRotation,
-                finalRotation
-        );
-
-        animator.setDuration(4000);
-        animator.setInterpolator(new DecelerateInterpolator());
-
-        animator.addListener(new Animator.AnimatorListener() {
+        gestureDetector = new GestureDetector(this, new GestureDetector.SimpleOnGestureListener(){
             @Override
-            public void onAnimationStart(Animator animation) {
-                resultText.setText("Spinning...");
+            public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY){
+                spinWheel(velocityX, velocityY);
+                return true;
             }
-
-            @Override
-            public void onAnimationEnd(Animator animation) {
-                resultText.setText("Result: " + winningNumber);
-                spinButton.setEnabled(true);
-                currentRotation = finalRotation % 360;
-            }
-
-            @Override public void onAnimationCancel(Animator animation) {}
-            @Override public void onAnimationRepeat(Animator animation) {}
         });
 
-        animator.start();
+        rouletteWheel.setOnTouchListener((v, event) -> gestureDetector.onTouchEvent(event));
+    }
+
+    private void spinWheel(float velocityX, float velocityY) {
+
+        float flickPower = Math.abs(velocityX) + Math.abs(velocityY);
+        int spinCount = (int) Math.min(20, flickPower / 2000);
+        if (spinCount < 5) spinCount = 5;
+
+
+        int randomSlot = random.nextInt(Num_Slots);
+        int finalDegree = (spinCount * 360) + (int)(randomSlot * Slot_Degrees);
+
+        ObjectAnimator rotate = ObjectAnimator.ofFloat(rouletteWheel, "rotation", lastDegree, finalDegree);
+        rotate.setDuration(3000);
+        rotate.setInterpolator(null);
+
+        rotate.addListener(new Animator.AnimatorListener(){
+            @Override
+            public void onAnimationStart(Animator animator){
+            resultText.setText("Spinning...");
+            }
+
+            @Override
+            public void onAnimationCancel(@NonNull Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animator){
+                int landedSlot = randomSlot;
+                resultText.setText("Result: " + landedSlot);
+                lastDegree = finalDegree % 360;
+            }
+
+            @Override
+            public void onAnimationRepeat(@NonNull Animator animation) {
+
+            }
+        });
+
+        rotate.start();
     }
 }

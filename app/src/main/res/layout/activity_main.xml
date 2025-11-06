@@ -20,7 +20,7 @@
         android:layout_alignParentEnd="true"
         android:layout_margin="16dp" />
 
-    <!-- Center content: wheel + Help button -->
+    <!-- Center content: wheel + Help button + $ button -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -42,6 +42,14 @@
             android:layout_height="wrap_content"
             android:text="Help"
             android:layout_marginTop="24dp"/>
+
+        <Button
+            android:id="@+id/moneyButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"/>
+
     </LinearLayout>
 </RelativeLayout>
-

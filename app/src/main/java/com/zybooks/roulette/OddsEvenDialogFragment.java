@@ -1,0 +1,37 @@
+package com.zybooks.roulette;
+
+import android.app.Dialog;
+import android.content.Context;
+import android.os.Bundle;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.DialogFragment;
+
+public class OddsEvenDialogFragment extends DialogFragment
+{
+     int[] test = {1,2};
+    public interface OnOddsEvenSelectedListener{
+    void onOddsEvenClick(int which);
+
+    }
+
+    private OnOddsEvenSelectedListener mListener;
+
+    @NonNull
+    @Override
+
+
+    public Dialog onCreateDialog(@Nullable Bundle savedInstanceState)
+    {
+    AlertDialog.Builder builder = new AlertDialog.Builder(requireActivity());
+    builder.setTitle("Odds Even"); //FIX THIS LATER NOT GOOD PRACTICE
+
+
+
+
+    }
+
+
+
+}

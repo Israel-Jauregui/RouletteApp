@@ -10,7 +10,7 @@ import androidx.fragment.app.DialogFragment;
 
 public class OddsEvenDialogFragment extends DialogFragment
 {
-     int[] test = {1,2};
+
     public interface OnOddsEvenSelectedListener{
     void onOddsEvenClick(int which);
 
@@ -25,12 +25,31 @@ public class OddsEvenDialogFragment extends DialogFragment
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState)
     {
     AlertDialog.Builder builder = new AlertDialog.Builder(requireActivity());
-    builder.setTitle("Odds Even"); //FIX THIS LATER NOT GOOD PRACTICE
+    builder.setTitle(R.string.oddsEvensPick);
+    builder.setItems(
+            R.array.oddsEven_array, (dialog, which) ->
+            {
+                mListener.onOddsEvenClick(which);
+
+            }
 
 
+
+    );
+
+
+    return builder.create();
+    }
+
+    @Override
+    public void onAttach(@NonNull Context context)
+    {
+        super.onAttach(context);
+        mListener = (OnOddsEvenSelectedListener) context;
 
 
     }
+
 
 
 

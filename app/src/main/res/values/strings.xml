@@ -14,4 +14,15 @@
     <string name="action_number">Number</string>
     <string name="action_odd_even">Odd / Even</string>
     <string name="roulette">Roulette</string>
+
+
+    <string name ="oddsEvensPick">Pick Odds or Even</string>
+
+    <string-array name = "oddsEven_array">
+        <item>Odds</item>
+        <item>Even</item>
+
+    </string-array>
+
+
 </resources>

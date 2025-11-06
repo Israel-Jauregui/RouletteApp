@@ -1,6 +1,7 @@
 package com.zybooks.roulette;
 
 import android.content.Intent;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -12,6 +13,8 @@ import android.widget.Toast;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import java.util.ArrayList;
 import java.util.Random;
 import android.animation.Animator;
 import android.view.animation.DecelerateInterpolator;
@@ -25,6 +28,7 @@ import android.content.SharedPreferences;
 public class MainActivity extends AppCompatActivity implements OddsEvenDialogFragment.OnOddsEvenSelectedListener {
 
     private User user;
+    private Bets bet;
     private RouletteWheel rouletteWheel;
     private TextView balanceText;
 
@@ -97,6 +101,12 @@ public class MainActivity extends AppCompatActivity implements OddsEvenDialogFra
     @Override
     public void onOddsEvenClick(int which)
     {
+
+        Log.d("TAG", Integer.toString(which));
+        ArrayList<Integer> test = new ArrayList<Integer>();
+
+
+
 
 
 

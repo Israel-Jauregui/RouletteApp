@@ -103,7 +103,8 @@ public class MainActivity extends AppCompatActivity implements OddsEvenDialogFra
     {
 
         Log.d("TAG", Integer.toString(which));
-        ArrayList<Integer> test = new ArrayList<Integer>();
+        bet.setOddsEven(which);
+        Log.d("TAG", Double.toString(bet.multiplier()));
 
 
 

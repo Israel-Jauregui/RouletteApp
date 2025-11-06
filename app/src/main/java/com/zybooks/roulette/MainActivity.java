@@ -27,11 +27,15 @@ public class MainActivity extends AppCompatActivity {
     private Random random;
 
     private int lastDegree = 0;
-    private static final int Num_Slots= 37;
+    private static final int Num_Slots= 38;
     private static final float Slot_Degrees= 360f / Num_Slots;
 
 
     private float currentRotation = 0f;
+
+    private static int[] wheelSequence = {0, 32, 15, 19, 4, 21, 2, 25, 17, 34, 37, 6, 27, 13, 36,
+            11, 30, 8, 23, 10, 5, 24, 16, 33, 1, 20, 14, 31, 9, 22,
+            18, 29, 7, 28, 12, 35, 3, 26};
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -94,5 +98,11 @@ public class MainActivity extends AppCompatActivity {
         });
 
         rotate.start();
+    }
+    private int getIndexOf(int number) {
+        for (int i = 0; i < wheelSequence.length; i++) {
+            if (wheelSequence[i] == number) return i;
+        }
+        return -1; // should never happen
     }
 }

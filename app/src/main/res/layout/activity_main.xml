@@ -27,6 +27,16 @@
         android:gravity="center">
 
         <ImageView
+            android:id="@+id/pointer"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/pointer"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+            android:rotation="360"
+            android:layout_alignParentTop="true"/>
+
+        <ImageView
             android:id="@+id/rouletteTable"
             android:layout_width="355dp"
             android:layout_height="355dp"

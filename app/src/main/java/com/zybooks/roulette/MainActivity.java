@@ -22,7 +22,7 @@ import android.view.Window;
 import androidx.core.view.WindowCompat;
 import android.content.SharedPreferences;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements OddsEvenDialogFragment.OnOddsEvenSelectedListener {
 
     private User user;
     private RouletteWheel rouletteWheel;
@@ -85,9 +85,23 @@ public class MainActivity extends AppCompatActivity {
             return true;
         } else if (id == R.id.action_odd_even) {
             Toast.makeText(this, "Odd / Even selected", Toast.LENGTH_SHORT).show();
+            OddsEvenDialogFragment dialog = new OddsEvenDialogFragment();
+            dialog.show(getSupportFragmentManager(), "oddsEvenDialog");
+
+
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
+    @Override
+    public void onOddsEvenClick(int which)
+    {
+
+
+
+
+    }
+
+
 }

@@ -14,17 +14,17 @@
             android:name=".HelpActivity"
             android:exported="false" />
 
-        <!-- Secondary activity if needed -->
+
         <activity
             android:name=".RouletteActivity"
             android:exported="false"/>
 
-        <!-- MoneyActivity declaration -->
+
         <activity
             android:name=".MoneyActivity"
             android:exported="true" />
 
-        <!-- Launch MainActivity first -->
+
         <activity
             android:name=".MainActivity"
             android:exported="true">

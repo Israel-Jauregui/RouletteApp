@@ -1,16 +1,14 @@
 package com.zybooks.roulette;
 
 import android.content.Intent;
-import android.widget.Button;
-import android.widget.TextView;
-
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
-import java.util.Random;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity implements OddsEvenDialogFragment.OnOddsEvenSelectedListener {
 
@@ -28,17 +26,14 @@ public class MainActivity extends AppCompatActivity implements OddsEvenDialogFra
         ImageView wheelView = findViewById(R.id.rouletteTable);
         balanceText = findViewById(R.id.MoneyText);
         Button helpButton = findViewById(R.id.helpButton);
-        Button moneyButton = findViewById(R.id.moneyButton);   // <-- NEW BUTTON
+        Button moneyButton = findViewById(R.id.moneyButton);
 
         rouletteWheel = new RouletteWheel(wheelView);
-
         balanceText.setText("$" + user.getMoney());
-
 
         helpButton.setOnClickListener(v -> {
             startActivity(new Intent(MainActivity.this, HelpActivity.class));
         });
-
 
         moneyButton.setOnClickListener(v -> {
             startActivity(new Intent(MainActivity.this, MoneyActivity.class));
@@ -54,10 +49,11 @@ public class MainActivity extends AppCompatActivity implements OddsEvenDialogFra
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
+
         if (id == R.id.action_red_black) {
-            int test = user.getMoney() + 1;
-            user.setMoney(test);
-            balanceText.setText("$"+ user.getMoney());
+            int newMoney = user.getMoney() + 1;
+            user.setMoney(newMoney);
+            balanceText.setText("$" + user.getMoney());
             Toast.makeText(this, "Red / Black selected", Toast.LENGTH_SHORT).show();
             return true;
         } else if (id == R.id.action_range) {
@@ -78,7 +74,6 @@ public class MainActivity extends AppCompatActivity implements OddsEvenDialogFra
 
     @Override
     public void onOddsEvenClick(int which) {
-        // Your code here
+
     }
 }
-

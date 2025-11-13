@@ -127,7 +127,7 @@ private Bets bet;
             @Override
             public void onAnimationEnd(Animator animator) {
                 // Handle 00 as 37 in the array
-                String resultLabel = (result == 37) ? "00" : String.valueOf(result);
+                String resultLabel = String.valueOf(result);
                 resultText.setText("Result: " + resultLabel);
 
                 int add = (int) bet.multiplier() * 25;

@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements OddsEvenDialogFra
         super.onCreate(savedInstanceState);
 
          user = new User(this);
+         bet = new Bets();
         setContentView(R.layout.activity_main);
 
         ImageView wheelView = findViewById(R.id.rouletteTable);
@@ -105,7 +106,7 @@ public class MainActivity extends AppCompatActivity implements OddsEvenDialogFra
         Log.d("TAG", Integer.toString(which));
         bet.setOddsEven(which);
         Log.d("TAG", Double.toString(bet.multiplier()));
-
+        bet.multiplier();
 
 
 

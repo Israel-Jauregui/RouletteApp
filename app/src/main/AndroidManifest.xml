@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
@@ -15,12 +14,17 @@
             android:name=".HelpActivity"
             android:exported="false" />
 
-        <!-- Secondary activity if needed -->
+
         <activity
             android:name=".RouletteActivity"
             android:exported="false"/>
 
-        <!-- Launch MainActivity first -->
+
+        <activity
+            android:name=".MoneyActivity"
+            android:exported="true" />
+
+
         <activity
             android:name=".MainActivity"
             android:exported="true">

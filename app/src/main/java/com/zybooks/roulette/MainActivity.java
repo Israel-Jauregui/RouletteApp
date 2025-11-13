@@ -30,6 +30,9 @@ public class MainActivity extends AppCompatActivity
         ImageView wheelView = findViewById(R.id.rouletteTable);
         balanceText = findViewById(R.id.MoneyText);
         Button helpButton = findViewById(R.id.helpButton);
+         Button moneyButton = findViewById(R.id.moneyButton);
+
+      
 
         rouletteWheel = new RouletteWheel(wheelView);
         balanceText.setText("$" + user.getMoney());
@@ -38,7 +41,14 @@ public class MainActivity extends AppCompatActivity
         helpButton.setOnClickListener(v ->
                 startActivity(new Intent(MainActivity.this, HelpActivity.class))
         );
+      
+      moneyButton.setOnClickListener(v -> {
+            startActivity(new Intent(MainActivity.this, MoneyActivity.class));
+        });
     }
+    }
+          
+          
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -109,9 +119,6 @@ public class MainActivity extends AppCompatActivity
         Toast.makeText(this, "You chose range: " + range, Toast.LENGTH_SHORT).show();
     }
 }
-
-
-
 
 
 

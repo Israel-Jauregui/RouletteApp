@@ -3,8 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:fitsSystemWindows="true"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     android:background="#101010"
     tools:context="com.zybooks.roulette.MainActivity">
 
@@ -20,7 +20,7 @@
         android:layout_alignParentEnd="true"
         android:layout_margin="16dp" />
 
-    <!-- Center content: wheel + Help button -->
+    <!-- Center content: wheel + UI elements -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -36,13 +36,48 @@
             android:contentDescription="Roulette Wheel"
             android:src="@drawable/test"/>
 
+
+        <LinearLayout
+            android:id="@+id/betLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:id="@+id/betMultiplierText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Multiplier: x1"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/betAmountText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bet: "
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"/>
+        </LinearLayout>
+
+
         <Button
             android:id="@+id/helpButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Help"
             android:layout_marginTop="24dp"/>
+
+        <Button
+            android:id="@+id/moneyButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"/>
+
     </LinearLayout>
 </RelativeLayout>
-
-

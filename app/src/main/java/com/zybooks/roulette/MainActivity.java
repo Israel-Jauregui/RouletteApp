@@ -30,9 +30,10 @@ public class MainActivity extends AppCompatActivity
     private ImageView rouletteWheel;
     private TextView balanceText;
     private TextView resultText;
+    private TextView multiplerText;
     private GestureDetector gestureDetector;
     private Random random;
-
+private Bets bet;
     private static final int NUM_SLOTS = 38;
     private static final float SLOT_DEGREES = 360f / NUM_SLOTS;
 
@@ -47,10 +48,11 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         user = new User(this);
+        bet = new Bets();
         setContentView(R.layout.activity_main);
         rouletteWheel = findViewById(R.id.rouletteTable);
 
-
+        multiplerText = findViewById(R.id.betMultiplierText);
         balanceText = findViewById(R.id.MoneyText);
         resultText = findViewById(R.id.balanceText);
         random = new Random();
@@ -153,13 +155,25 @@ public class MainActivity extends AppCompatActivity
     // Called when user picks Odds or Even
     @Override
     public void onOddsEvenClick(int which) {
-        String[] choices = getResources().getStringArray(R.array.oddsEven_array);
-        String choice = choices[which];
-        Toast.makeText(this, "You chose: " + choice, Toast.LENGTH_SHORT).show();
+       // String[] choices = getResources().getStringArray(R.array.oddsEven_array);
+       // String choice = choices[which];
+       // Toast.makeText(this, "You chose: " + choice, Toast.LENGTH_SHORT).show();
+
+        bet.setOddsEven(which);
+        double multiplerval = bet.multiplier();
+        multiplerText.setText("Multiplier:x" + Double.toString(multiplerval));
+
+
     }
 
     @Override
     public void onNumberSelected(int number) {
+
+        bet.setNumber(number);
+        double multiplerval = bet.multiplier();
+        multiplerText.setText("Multiplier:x" + Double.toString(multiplerval));
+
+
 
     }
     // Called when user picks Red or Black
@@ -173,9 +187,13 @@ public class MainActivity extends AppCompatActivity
     // Called when user picks a Number
     @Override
     public void onNumberClick(int which) {
-        String[] numbers = getResources().getStringArray(R.array.number_array);
-        String number = numbers[which];
-        Toast.makeText(this, "You chose number: " + number, Toast.LENGTH_SHORT).show();
+     //   String[] numbers = getResources().getStringArray(R.array.number_array);
+       // String number = numbers[which];
+       // Toast.makeText(this, "You chose number: " + number, Toast.LENGTH_SHORT).show();
+        bet.setNumber(which);
+        double multiplerval = bet.multiplier();
+        multiplerText.setText("Multiplier:x" + Double.toString(multiplerval));
+
     }
 
     // Called when user picks a Range

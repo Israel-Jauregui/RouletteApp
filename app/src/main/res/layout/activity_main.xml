@@ -86,7 +86,7 @@
                 android:id="@+id/betAmountText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Bet: "
+                android:text="Bet: 25"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp"/>
         </LinearLayout>

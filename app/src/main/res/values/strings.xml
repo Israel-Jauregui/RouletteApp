@@ -19,7 +19,7 @@
     <string name ="oddsEvensPick">Pick Odds or Even</string>
 
     <string-array name = "oddsEven_array">
-        <item>Even</item>
+        <item>Evens</item>
         <item>Odds</item>
 
     </string-array>
@@ -32,6 +32,7 @@
     <string name="numberPick">Pick a Number</string>
 
     <string-array name="number_array">
+        <Item>0</Item>
         <item>1</item>
         <item>2</item>
         <item>3</item>

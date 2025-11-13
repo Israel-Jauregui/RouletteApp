@@ -9,6 +9,15 @@
     tools:context="com.zybooks.roulette.MainActivity">
 
     <!-- Balance placeholder showing a single $ -->
+    
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="8dp"
+        android:gravity="end">
     <TextView
         android:id="@+id/MoneyText"
         android:layout_width="wrap_content"
@@ -16,9 +25,19 @@
         android:text="$"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
+
         android:layout_margin="16dp" />
+
+    <TextView
+        android:id="@+id/balanceText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Spin!"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+
+        android:layout_margin="16dp" />
+    </LinearLayout>
 
     <!-- Center content: wheel + UI elements -->
     <LinearLayout
@@ -27,6 +46,15 @@
         android:orientation="vertical"
         android:gravity="center">
 
+        <ImageView
+            android:id="@+id/pointer"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/img"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+            android:rotation="360"
+            android:layout_alignParentTop="true"/>
         <ImageView
             android:id="@+id/rouletteTable"
             android:layout_width="355dp"

@@ -85,6 +85,16 @@ private Bets bet;
     }
 
     @Override
+    protected void onRestart(){
+        super.onRestart();
+        balanceText.setText("$" + user.getMoney());
+
+
+    }
+
+
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.roulette_menu, menu);
         return true;
@@ -108,6 +118,9 @@ private Bets bet;
         rotate.addListener(new Animator.AnimatorListener() {
             @Override
             public void onAnimationStart(Animator animator) {
+
+                user.setMoney(user.getMoney() - 25);
+                balanceText.setText("$" + user.getMoney());
                 resultText.setText("Spinning...");
             }
 
@@ -116,6 +129,19 @@ private Bets bet;
                 // Handle 00 as 37 in the array
                 String resultLabel = (result == 37) ? "00" : String.valueOf(result);
                 resultText.setText("Result: " + resultLabel);
+
+                int add = (int) bet.multiplier() * 25;
+
+
+                if(bet.hitOrNot(result))
+                {
+                    user.setMoney(user.getMoney() + add);
+                    balanceText.setText("$" + user.getMoney());
+                }
+
+
+
+
             }
 
             @Override public void onAnimationCancel(@NonNull Animator animator) {}
@@ -179,9 +205,13 @@ private Bets bet;
     // Called when user picks Red or Black
     @Override
     public void onRedBlackClick(int which) {
-        String[] choices = getResources().getStringArray(R.array.redBlack_array);
-        String choice = choices[which];
-        Toast.makeText(this, "You chose: " + choice, Toast.LENGTH_SHORT).show();
+       // String[] choices = getResources().getStringArray(R.array.redBlack_array);
+       // String choice = choices[which];
+       // Toast.makeText(this, "You chose: " + choice, Toast.LENGTH_SHORT).show();
+
+        bet.setRedsBlack(which);
+        double multiplerval = bet.multiplier();
+        multiplerText.setText("Multiplier:x" + Double.toString(multiplerval));
     }
 
     // Called when user picks a Number
@@ -199,8 +229,13 @@ private Bets bet;
     // Called when user picks a Range
     @Override
     public void onRangeClick(int which) {
-        String[] ranges = getResources().getStringArray(R.array.range_array);
-        String range = ranges[which];
-        Toast.makeText(this, "You chose range: " + range, Toast.LENGTH_SHORT).show();
+     //   String[] ranges = getResources().getStringArray(R.array.range_array);
+       // String range = ranges[which];
+       // Toast.makeText(this, "You chose range: " + range, Toast.LENGTH_SHORT).show();
+        bet.setRange(which);
+        double multiplerval = bet.multiplier();
+        multiplerText.setText("Multiplier:x" + Double.toString(multiplerval));
+
+
     }
 }

@@ -12,23 +12,32 @@ public class MoneyActivity extends AppCompatActivity {
     private ImageView moneyImage;
     private TextView counterText;
     private int counter = 0;
-
+    private User user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_money);
+        user = new User(this);
 
         moneyImage = findViewById(R.id.moneyImage);
         counterText = findViewById(R.id.moneyCounter);
 
 
-        counterText.setText("$" + counter);
+        counterText.setText("$" + user.getMoney());
 
         moneyImage.setOnClickListener(v -> {
-            counter++;
-            counterText.setText("$" + counter);
+           user.setMoney(user.getMoney() + 1);
+            counterText.setText("$" + user.getMoney());
             popAnimation(moneyImage);
         });
+    }
+
+    @Override
+    protected void onRestart(){
+        super.onRestart();
+        counterText.setText("$" + user.getMoney());
+
+
     }
 
     private void popAnimation(ImageView view) {

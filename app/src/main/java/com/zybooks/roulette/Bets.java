@@ -26,18 +26,28 @@ public class Bets {
 
     public void setRedsBlack(int which)
     {
+        ArrayList<Integer> temp = new ArrayList<Integer>();
+
         int[] blacks = {32,19,21,25,34,6,13,11,8,10,24,33,20,31,22,29,28,35,26};
-        int[] red = {15,4,2,17,37,};
+        int[] red = {15,4,2,17,37,27,36,30,23,5,16,1,14,9,18,7,12,3};
 
         if(which == 0)
         {
+            for(int i : red)
+            {
+                temp.add(i);
+            }
 
+            redsBlack = temp;
         }
         else if(which == 1){
-
+            for(int i : blacks)
+            {
+                temp.add(i);
+            }
         }
         else{
-
+            redsBlack = temp;
         }
 
 
@@ -45,10 +55,53 @@ public class Bets {
 
     public void setRange(int which)
     {
+        ArrayList<Integer> temp = new ArrayList<Integer>();
+
         int[] range0 = {1,2,3,4,5,6,7,8,9};
         int[] range1 = {10,11,12,13,14,15,16,17,18,19};
         int[] range2 = {20,21,22,23,24,25,26,27,28,29};
         int[] range3 = {30,31,32,33,34,35,36,37};
+
+        if(which == 0)
+        {
+            for (int j : range0) {
+                temp.add(j);
+            }
+
+            range = temp;
+        }
+
+        if(which == 1)
+        {
+            for (int j : range1) {
+                temp.add(j);
+            }
+
+            range = temp;
+        }
+        if(which == 2)
+        {
+            for (int j : range2) {
+                temp.add(j);
+            }
+
+            range = temp;
+        }
+        if(which == 3)
+        {
+            for (int j : range3) {
+                temp.add(j);
+            }
+
+            range = temp;
+        }
+        if(which == 4)
+        {
+
+
+            range = temp;
+        }
+
 
 
 
@@ -62,7 +115,7 @@ public class Bets {
         ArrayList<Integer> temp = new ArrayList<Integer>();
 
 
-        if(which == 38)
+        if(which == 0)
         {
            number = temp;
         }
@@ -82,6 +135,12 @@ public class Bets {
         // 1 is odds
 
     int tracker = 1;
+
+    if(choice == 2)
+    {
+        tracker = 50;
+    }
+
     while(tracker < 38)
     {
     if(tracker % 2 == choice)

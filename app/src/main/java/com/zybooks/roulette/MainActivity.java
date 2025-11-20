@@ -111,6 +111,7 @@ private Bets bet;
         int targetAngle = (int) (360 - (randomIndex * SLOT_DEGREES));
         int finalDegree = (spinCount * 360) + targetAngle;
 
+        //sound
         MediaPlayer spinSound = MediaPlayer.create(this, R.raw.wheel_sound);
         spinSound.setVolume(1.0f, 1.0f);
         spinSound.setLooping(true);
@@ -144,6 +145,7 @@ private Bets bet;
                     balanceText.setText("$" + user.getMoney());
                 }
 
+                //sound
                 if (spinSound != null) {
                     spinSound.stop();
                     spinSound.release();

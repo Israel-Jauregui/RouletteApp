@@ -6,7 +6,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.view.animation.ScaleAnimation;
 import android.view.animation.Animation;
-
+import android.media.MediaPlayer;
 public class MoneyActivity extends AppCompatActivity {
 
     private ImageView moneyImage;
@@ -47,6 +47,10 @@ public class MoneyActivity extends AppCompatActivity {
                 Animation.RELATIVE_TO_SELF, 0.5f,
                 Animation.RELATIVE_TO_SELF, 0.5f
         );
+        MediaPlayer moneySound = MediaPlayer.create(this, R.raw.money_sound);
+        moneySound.setVolume(1.0f, 1.0f);
+        moneySound.start();
+
         scale.setDuration(150);
         scale.setRepeatCount(1);
         scale.setRepeatMode(Animation.REVERSE);

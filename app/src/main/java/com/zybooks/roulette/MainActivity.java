@@ -15,7 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.view.GestureDetector;
-
+import android.media.MediaPlayer;
 import androidx.appcompat.app.AppCompatActivity;
 import java.util.Random;
 import androidx.annotation.NonNull;
@@ -111,6 +111,11 @@ private Bets bet;
         int targetAngle = (int) (360 - (randomIndex * SLOT_DEGREES));
         int finalDegree = (spinCount * 360) + targetAngle;
 
+        MediaPlayer spinSound = MediaPlayer.create(this, R.raw.wheel_sound);
+        spinSound.setVolume(1.0f, 1.0f);
+        spinSound.setLooping(true);
+        spinSound.start();
+
         ObjectAnimator rotate = ObjectAnimator.ofFloat(rouletteWheel, "rotation", 0f, finalDegree);
         rotate.setDuration(4000);
         rotate.setInterpolator(new DecelerateInterpolator());
@@ -139,8 +144,10 @@ private Bets bet;
                     balanceText.setText("$" + user.getMoney());
                 }
 
-
-
+                if (spinSound != null) {
+                    spinSound.stop();
+                    spinSound.release();
+                }
 
             }
 

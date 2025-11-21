@@ -5,14 +5,6 @@
     android:layout_height="match_parent"
     android:background="#101010">
 
-    <ImageView
-        android:id="@+id/moneyImage"
-        android:layout_width="250dp"
-        android:layout_height="140dp"
-        android:src="@drawable/dollar_bill"
-        android:contentDescription="Dollar Bill"
-        android:layout_centerInParent="true"
-        android:adjustViewBounds="true" />
 
     <TextView
         android:id="@+id/moneyCounter"
@@ -24,5 +16,39 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="48dp"
-        android:layout_marginEnd="16dp"/>
+        android:layout_marginEnd="16dp" />
+
+
+    <TextView
+        android:id="@+id/multiplierText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Multiplier: 1x"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_above="@id/moneyImage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp" />
+
+
+    <ImageView
+        android:id="@+id/moneyImage"
+        android:layout_width="250dp"
+        android:layout_height="140dp"
+        android:src="@drawable/dollar_bill"
+        android:contentDescription="Dollar Bill"
+        android:layout_centerInParent="true"
+        android:adjustViewBounds="true" />
+
+
+    <Button
+        android:id="@+id/upgradeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Upgrade Dollar"
+        android:layout_below="@id/moneyImage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp" />
+
 </RelativeLayout>

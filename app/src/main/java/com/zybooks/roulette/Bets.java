@@ -33,18 +33,12 @@ public class Bets {
 
         if(which == 0)
         {
-            for(int i : red)
-            {
-                temp.add(i);
-            }
-
+            for(int i : red) temp.add(i);
             redsBlack = temp;
         }
         else if(which == 1){
-            for(int i : blacks)
-            {
-                temp.add(i);
-            }
+            for(int i : blacks) temp.add(i);
+            redsBlack = temp;
         }
         else{
             redsBlack = temp;

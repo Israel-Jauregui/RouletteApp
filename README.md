@@ -1,4 +1,4 @@
-Roulette Wheel:
+## Roulette Wheel:
 The wheel is based on the American Roulette wheel (0 - 37), 0 counts as a house win.
 
 Spin the wheel using the flick gesture.

@@ -120,8 +120,10 @@ public class Bets {
         HashSet<Integer> outcomes = calculateBetOutcomes();
 
         if (outcomes.isEmpty()) return 10000.0;
+        double returnVal =  (double) regular.length / outcomes.size();
 
-        return (double) regular.length / outcomes.size();
+
+        return returnVal;
     }
 }
 

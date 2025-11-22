@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity
     private TextView multiplerText;
     private GestureDetector gestureDetector;
     private Random random;
-private Bets bet;
+    private Bets bet;
     private static final int NUM_SLOTS = 38;
     private static final float SLOT_DEGREES = 360f / NUM_SLOTS;
 
@@ -190,9 +190,9 @@ private Bets bet;
     // Called when user picks Odds or Even
     @Override
     public void onOddsEvenClick(int which) {
-       // String[] choices = getResources().getStringArray(R.array.oddsEven_array);
-       // String choice = choices[which];
-       // Toast.makeText(this, "You chose: " + choice, Toast.LENGTH_SHORT).show();
+        // String[] choices = getResources().getStringArray(R.array.oddsEven_array);
+        // String choice = choices[which];
+        // Toast.makeText(this, "You chose: " + choice, Toast.LENGTH_SHORT).show();
 
         bet.setOddsEven(which);
         double multiplerval = bet.multiplier();
@@ -214,9 +214,9 @@ private Bets bet;
     // Called when user picks Red or Black
     @Override
     public void onRedBlackClick(int which) {
-       // String[] choices = getResources().getStringArray(R.array.redBlack_array);
-       // String choice = choices[which];
-       // Toast.makeText(this, "You chose: " + choice, Toast.LENGTH_SHORT).show();
+        // String[] choices = getResources().getStringArray(R.array.redBlack_array);
+        // String choice = choices[which];
+        // Toast.makeText(this, "You chose: " + choice, Toast.LENGTH_SHORT).show();
 
         bet.setRedsBlack(which);
         double multiplerval = bet.multiplier();
@@ -226,9 +226,9 @@ private Bets bet;
     // Called when user picks a Number
     @Override
     public void onNumberClick(int which) {
-     //   String[] numbers = getResources().getStringArray(R.array.number_array);
-       // String number = numbers[which];
-       // Toast.makeText(this, "You chose number: " + number, Toast.LENGTH_SHORT).show();
+        //   String[] numbers = getResources().getStringArray(R.array.number_array);
+        // String number = numbers[which];
+        // Toast.makeText(this, "You chose number: " + number, Toast.LENGTH_SHORT).show();
         bet.setNumber(which);
         double multiplerval = bet.multiplier();
         multiplerText.setText("Multiplier:x" + Double.toString(multiplerval));
@@ -238,9 +238,9 @@ private Bets bet;
     // Called when user picks a Range
     @Override
     public void onRangeClick(int which) {
-     //   String[] ranges = getResources().getStringArray(R.array.range_array);
-       // String range = ranges[which];
-       // Toast.makeText(this, "You chose range: " + range, Toast.LENGTH_SHORT).show();
+        //   String[] ranges = getResources().getStringArray(R.array.range_array);
+        // String range = ranges[which];
+        // Toast.makeText(this, "You chose range: " + range, Toast.LENGTH_SHORT).show();
         bet.setRange(which);
         double multiplerval = bet.multiplier();
         multiplerText.setText("Multiplier:x" + Double.toString(multiplerval));

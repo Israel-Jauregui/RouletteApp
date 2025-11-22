@@ -45,6 +45,7 @@ public class Bets {
             {
                 temp.add(i);
             }
+            redsBlack = temp;
         }
         else{
             redsBlack = temp;

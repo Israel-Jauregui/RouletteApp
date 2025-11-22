@@ -1,7 +1,10 @@
 package com.zybooks.roulette;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.view.animation.ScaleAnimation;
@@ -11,6 +14,8 @@ public class MoneyActivity extends AppCompatActivity {
 
     private ImageView moneyImage;
     private TextView counterText;
+    private TextView multiplerText;
+    private Button moneyUpgradeButton;
     private int counter = 0;
     private User user;
     @Override
@@ -21,12 +26,43 @@ public class MoneyActivity extends AppCompatActivity {
 
         moneyImage = findViewById(R.id.moneyImage);
         counterText = findViewById(R.id.moneyCounter);
+        multiplerText = findViewById(R.id.multiplierText);
 
+        moneyUpgradeButton = findViewById(R.id.upgradeButton);
 
         counterText.setText("$" + user.getMoney());
+        multiplerText.setText("Multipler: x" + user.getMoneyProgression());
+
+        moneyUpgradeButton.setOnClickListener(v ->
+        {
+                if(user.getMoney() >= 25)
+                {
+                    int temp  = user.getMoneyProgression();
+                    user.setMoneyProgression(temp + 1);
+                    multiplerText.setText("Multipler: x" + user.getMoneyProgression());
+                    user.setMoney(user.getMoney() - 25);
+                    counterText.setText("$" + user.getMoney());
+
+
+
+                }
+                else{
+
+                    OutOfMoneyFragment dialog = new OutOfMoneyFragment();
+                    dialog.show(getSupportFragmentManager(),"OutOfMoney");
+
+
+                }
+
+        }        );
+
+
 
         moneyImage.setOnClickListener(v -> {
-           user.setMoney(user.getMoney() + 1);
+            int multipler = user.getMoneyProgression();
+
+
+           user.setMoney(user.getMoney() + (multipler));
             counterText.setText("$" + user.getMoney());
             popAnimation(moneyImage);
         });

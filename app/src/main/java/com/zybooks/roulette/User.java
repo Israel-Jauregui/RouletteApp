@@ -28,6 +28,21 @@ public class User {
         editor.apply();
     }
 
+    public int getMoneyProgression()
+    {
+
+        return currencyTracker.getInt("moneyProgression", 1);
+    }
+
+    public void setMoneyProgression(int moneyParam)
+    {
+        editor.putInt("moneyProgression", moneyParam);
+        editor.apply();
+
+    }
+
+
+
 
 
 

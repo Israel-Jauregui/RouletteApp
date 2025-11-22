@@ -5,5 +5,15 @@
     android:viewportWidth="108"
     android:viewportHeight="108">
 
+    <!-- Example: a simple white roulette wheel icon -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,0
+            A54,54 0 1,1 53.99,0
+            M54,10
+            A44,44 0 1,0 54,98
+            A44,44 0 1,0 54,10
+            Z"/>
+
     <!-- You can add more paths for details of your logo -->
 </vector>

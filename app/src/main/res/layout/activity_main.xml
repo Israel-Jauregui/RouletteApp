@@ -50,7 +50,7 @@
             android:id="@+id/pointer"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/img"
+            android:src="@drawable/img1"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="60dp"
             android:rotation="360"

@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity
         // Show initial bet
         betAmountText.setText("Bet: $" + bet.getBetAmount());
 
-        Button changeBet = findViewById(R.id.changeBetBtn);
+        Button changeBet = findViewById(R.id.changeBetButton);
         changeBet.setOnClickListener(v -> showBetPopup());
 
         Button helpButton = findViewById(R.id.helpButton);

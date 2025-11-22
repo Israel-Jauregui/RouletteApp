@@ -19,6 +19,7 @@ Note: Roulette App was intended for Educational,Entertainment and Informational 
 ### Money Maker
 - **Persistent Money**: Amount of money user has is saved even after the app is closed.
 - **Progression**: Upgrade the power of your click! Saved locally on device.
+- **Sound**: Enjoy the sound of your money as you earn it!
 - **Animation support**: Fluid animation for the dollar bill is played when the user clicks on it.
 
 ### General features

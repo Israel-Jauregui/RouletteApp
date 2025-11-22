@@ -188,7 +188,12 @@ public class MainActivity extends AppCompatActivity
 
             @Override
             public void onAnimationEnd(Animator animator) {
+
+
                 String resultLabel = String.valueOf(result);
+
+
+
                 resultText.setText("Result: " + resultLabel);
 
                 int winnings = (int) (bet.multiplier() * bet.getBetAmount());
@@ -237,30 +242,32 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onOddsEvenClick(int which) {
         bet.setOddsEven(which);
-        multiplerText.setText("Multiplier: x" + bet.multiplier());
+
+
+        multiplerText.setText("Multiplier: x" + String.format("%.2f", bet.multiplier()));
     }
 
     @Override
     public void onNumberSelected(int number) {
         bet.setNumber(number);
-        multiplerText.setText("Multiplier: x" + bet.multiplier());
+        multiplerText.setText("Multiplier: x" + String.format("%.2f", bet.multiplier()));
     }
 
     @Override
     public void onRedBlackClick(int which) {
         bet.setRedsBlack(which);
-        multiplerText.setText("Multiplier: x" + bet.multiplier());
+        multiplerText.setText("Multiplier: x" + String.format("%.2f", bet.multiplier()));
     }
 
     @Override
     public void onNumberClick(int which) {
         bet.setNumber(which);
-        multiplerText.setText("Multiplier: x" + bet.multiplier());
+        multiplerText.setText("Multiplier: x" + String.format("%.2f", bet.multiplier()));
     }
 
     @Override
     public void onRangeClick(int which) {
         bet.setRange(which);
-        multiplerText.setText("Multiplier: x" + bet.multiplier());
+        multiplerText.setText("Multiplier: x" + String.format("%.2f", bet.multiplier()));
     }
 }

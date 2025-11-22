@@ -32,11 +32,11 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Roulette is a chance based game based on picking red or black, with a number (0-37)\n
+            android:text="Roulette is a chance based game based on picking red or black, with a number (0 - 37)\n
 
 >When you first come play, you should establish a bet, you will start with $500.\n
 
->You will then pick a color, and number. It will consist of red and black, and 0-37.\n
+>You will then pick a color, and number. It will consist of red and black, and 0 - 37.\n
 
 >After that you will spin the wheel and wait for it to come to a stop under the arrow.\n
 

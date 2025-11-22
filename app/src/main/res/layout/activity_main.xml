@@ -8,25 +8,53 @@
     android:background="#101010"
     tools:context="com.zybooks.roulette.MainActivity">
 
+    <!-- Balance placeholder showing a single $ -->
 
-    <TextView
-        android:id="@+id/MoneyText"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="$"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
+        android:orientation="vertical"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_margin="16dp" />
+        android:layout_margin="8dp"
+        android:gravity="end">
+        <TextView
+            android:id="@+id/MoneyText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
 
+            android:layout_margin="16dp" />
 
+        <TextView
+            android:id="@+id/balanceText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Spin!"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+
+            android:layout_margin="16dp" />
+    </LinearLayout>
+
+    <!-- Center content: wheel + UI elements -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center">
 
+        <ImageView
+            android:id="@+id/pointer"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/img"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+            android:rotation="360"
+            android:layout_alignParentTop="true"/>
         <ImageView
             android:id="@+id/rouletteTable"
             android:layout_width="355dp"
@@ -58,10 +86,11 @@
                 android:id="@+id/betAmountText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Bet: "
+                android:text="Bet: 25"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp"/>
         </LinearLayout>
+
 
         <Button
             android:id="@+id/helpButton"
@@ -78,13 +107,12 @@
             android:textSize="20sp"
             android:layout_marginTop="10dp"/>
 
-
         <Button
-            android:id="@+id/changeBetButton"
+            android:id="@+id/changeBetBtn"
+            android:text="Change Bet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Change Bet"
-            android:layout_marginTop="12dp"/>
+            android:layout_marginTop="16dp"/>
 
     </LinearLayout>
 </RelativeLayout>

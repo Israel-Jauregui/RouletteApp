@@ -94,6 +94,9 @@ public class MainActivity extends AppCompatActivity
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
+
         super.onCreate(savedInstanceState);
         user = new User(this);
         bet = new Bets();
@@ -109,7 +112,7 @@ public class MainActivity extends AppCompatActivity
         // Show initial bet
         betAmountText.setText("Bet: $" + bet.getBetAmount());
 
-        Button changeBet = findViewById(R.id.changeBetButton);
+        Button changeBet = findViewById(R.id.changeBetBtn);
         changeBet.setOnClickListener(v -> showBetPopup());
 
         Button helpButton = findViewById(R.id.helpButton);
@@ -120,7 +123,15 @@ public class MainActivity extends AppCompatActivity
         gestureDetector = new GestureDetector(this, new GestureDetector.SimpleOnGestureListener() {
             @Override
             public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
-                spinWheel(velocityX, velocityY);
+
+                if(user.getMoney() > bet.getBetAmount()) {
+                    spinWheel(velocityX, velocityY);
+                }
+                else
+                {
+                    OutOfMoneyFragment dialog = new OutOfMoneyFragment();
+                    dialog.show(getSupportFragmentManager(),"OutOfMoney");
+                }
                 return true;
             }
         });

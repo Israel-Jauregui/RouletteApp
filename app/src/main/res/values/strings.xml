@@ -16,7 +16,7 @@
     <string name="roulette">Roulette</string>
 
     <string name="moneyError1">You don\'t have enough money!</string>
-    <string name="moneyErrorMessage1">Earn more money by pressing on the Dollar.</string>
+    <string name="moneyErrorMessage1">Earn more money by pressing on the dollar!</string>
     <string name="okStr">OK</string>
 
     <string name="moneyErrorMessage2">Lower your bet or click on the $ to earn more money!</string>
